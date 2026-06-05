@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Yimin Yan — Academic Homepage</title>
+        <meta
+            name="description"
+            content="Yimin Yan — M.S. student at the School of Artificial Intelligence, University of Chinese Academy of Sciences (UCAS) & Institute of Automation, Chinese Academy of Sciences (CASIA)."
+        />
+        <meta name="author" content="Yimin Yan" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz@0,6..72;1,6..72&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg: #ffffff;
+                --bg-soft: #f6f7f9;
+                --text: #1a1a1a;
+                --text-soft: #555a63;
+                --muted: #8a9099;
+                --accent: #2563eb;
+                --accent-soft: #e8effd;
+                --border: #e6e8eb;
+                --radius: 14px;
+                --maxw: 820px;
+            }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --bg: #0f1115;
+                    --bg-soft: #171a21;
+                    --text: #e8eaed;
+                    --text-soft: #b2b7bf;
+                    --muted: #757b85;
+                    --accent: #6ea8fe;
+                    --accent-soft: #1c2740;
+                    --border: #262a32;
+                }
+            }
+            * {
+                box-sizing: border-box;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                margin: 0;
+                font-family:
+                    "Inter",
+                    system-ui,
+                    -apple-system,
+                    "Segoe UI",
+                    Roboto,
+                    "Helvetica Neue",
+                    Arial,
+                    sans-serif;
+                background: var(--bg);
+                color: var(--text);
+                line-height: 1.65;
+                -webkit-font-smoothing: antialiased;
+            }
+            a {
+                color: var(--accent);
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .wrap {
+                max-width: var(--maxw);
+                margin: 0 auto;
+                padding: 0 22px;
+            }
+
+            /* Header / hero */
+            header.hero {
+                padding: 64px 0 28px;
+                border-bottom: 1px solid var(--border);
+            }
+            .hero-inner {
+                display: flex;
+                gap: 28px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .avatar {
+                width: 116px;
+                height: 116px;
+                border-radius: 50%;
+                object-fit: cover;
+                background: var(--bg-soft);
+                border: 1px solid var(--border);
+                flex: 0 0 auto;
+                display: grid;
+                place-items: center;
+                font-family: "Newsreader", serif;
+                font-size: 40px;
+                color: var(--muted);
+            }
+            .hero h1 {
+                font-family: "Newsreader", Georgia, serif;
+                font-size: 2.1rem;
+                margin: 0 0 6px;
+                letter-spacing: -0.01em;
+            }
+            .hero .role {
+                color: var(--text-soft);
+                margin: 0 0 12px;
+                font-size: 1rem;
+            }
+            .links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 6px;
+            }
+            .links a {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 0.86rem;
+                padding: 5px 12px;
+                border: 1px solid var(--border);
+                border-radius: 999px;
+                color: var(--text-soft);
+                background: var(--bg-soft);
+                transition: all 0.15s ease;
+            }
+            .links a:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+                text-decoration: none;
+            }
+
+            /* Sections */
+            section {
+                padding: 38px 0;
+                border-bottom: 1px solid var(--border);
+            }
+            section:last-of-type {
+                border-bottom: none;
+            }
+            h2 {
+                font-family: "Newsreader", Georgia, serif;
+                font-size: 1.35rem;
+                margin: 0 0 18px;
+                letter-spacing: -0.01em;
+            }
+            p {
+                color: var(--text-soft);
+            }
+
+            /* Info list */
+            .info {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .info li {
+                display: flex;
+                gap: 12px;
+                padding: 6px 0;
+                color: var(--text-soft);
+            }
+            .info li .k {
+                color: var(--muted);
+                flex: 0 0 116px;
+                font-size: 0.9rem;
+            }
+
+            /* Publications */
+            .pub {
+                display: flex;
+                gap: 14px;
+                padding: 16px 0;
+            }
+            .pub:not(:last-child) {
+                border-bottom: 1px dashed var(--border);
+            }
+            .pub .idx {
+                flex: 0 0 auto;
+                font-family: "Newsreader", serif;
+                font-weight: 600;
+                color: var(--accent);
+                background: var(--accent-soft);
+                width: 30px;
+                height: 30px;
+                border-radius: 8px;
+                display: grid;
+                place-items: center;
+                font-size: 0.92rem;
+            }
+            .pub .body {
+                flex: 1;
+            }
+            .pub .title {
+                color: var(--text);
+                font-weight: 600;
+                margin: 0 0 4px;
+            }
+            .pub .authors {
+                font-size: 0.92rem;
+                color: var(--text-soft);
+                margin: 0 0 4px;
+            }
+            .pub .authors .me {
+                color: var(--text);
+                font-weight: 700;
+            }
+            .pub .venue {
+                font-size: 0.88rem;
+                color: var(--muted);
+                margin: 0 0 6px;
+            }
+            .pub .meta-links {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+            .pub .meta-links a {
+                font-size: 0.78rem;
+                padding: 2px 9px;
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                color: var(--text-soft);
+            }
+            .pub .meta-links a:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+                text-decoration: none;
+            }
+
+            footer {
+                padding: 32px 0 56px;
+                color: var(--muted);
+                font-size: 0.82rem;
+                text-align: center;
+            }
+            @media (max-width: 560px) {
+                header.hero {
+                    padding-top: 44px;
+                }
+                .hero-inner {
+                    gap: 18px;
+                }
+                .avatar {
+                    width: 88px;
+                    height: 88px;
+                    font-size: 30px;
+                }
+                .hero h1 {
+                    font-size: 1.7rem;
+                }
+                .info li {
+                    flex-direction: column;
+                    gap: 0;
+                }
+                .info li .k {
+                    flex-basis: auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="hero">
+            <div class="wrap hero-inner">
+                <!-- Replace the text below with: <img class="avatar" src="avatar.jpg" alt="Yimin Yan" /> -->
+                <div class="avatar">
+                    <img class="avatar" src="image/head.jpg" alt="Yimin Yan" />
+                </div>
+                <div>
+                    <h1>Yimin Yan</h1>
+                    <p class="role">M.S. Student in Artificial Intelligence</p>
+                    <p class="role">
+                        School of Artificial Intelligence, UCAS &amp; Institute
+                        of Automation, CAS (CASIA)
+                    </p>
+                    <div class="links">
+                        <a href="mailto:yanyimin24@mails.ucas.ac.cn">✉ Email</a>
+                        <a
+                            href="https://scholar.google.com/"
+                            target="_blank"
+                            rel="noopener"
+                            >🎓 Google Scholar</a
+                        >
+                        <a
+                            href="https://github.com/yreme"
+                            target="_blank"
+                            rel="noopener"
+                            >💻 GitHub</a
+                        >
+                        <a
+                            href="https://arxiv.org/a/"
+                            target="_blank"
+                            rel="noopener"
+                            >📄 arXiv</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="wrap">
+            <section id="about">
+                <h2>About</h2>
+                <p>
+                    I am a Master's student in Artificial Intelligence, jointly
+                    affiliated with the
+                    <strong
+                        >School of Artificial Intelligence, University of
+                        Chinese Academy of Sciences (UCAS, Double
+                        First-Class)</strong
+                    >
+                    and the
+                    <strong
+                        >Institute of Automation, Chinese Academy of Sciences
+                        (CASIA)</strong
+                    >, since September 2024. My research interests lie in
+                    artificial intelligence, robotics, and semantic navigation.
+                </p>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <ul class="info">
+                    <li>
+                        <span class="k">2024.9 – Present</span>
+                        <span>
+                            <strong>M.S. in Artificial Intelligence</strong
+                            ><br />
+                            School of Artificial Intelligence, University of
+                            Chinese Academy of Sciences (UCAS); Institute of
+                            Automation, Chinese Academy of Sciences (CASIA)
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="research">
+                <h2>Research Interests</h2>
+                <ul class="info">
+                    <li>
+                        <span class="k">Areas</span
+                        ><span
+                            >Artificial Intelligence · Robotics · Semantic
+                            Navigation · Benchmarks &amp; Baselines</span
+                        >
+                    </li>
+                </ul>
+            </section>
+
+            <section id="publications">
+                <h2>Publications</h2>
+
+                <div class="pub">
+                    <div class="idx">1</div>
+                    <div class="body">
+                        <p class="title">
+                            OpenBench: A New Benchmark and Baseline for Semantic
+                            Navigation in Smart Logistics
+                        </p>
+                        <p class="authors">
+                            Junhui Wang, Dongjie Huo, Zehui Xu, Yongliang Shi,
+                            <span class="me">Yimin Yan</span>, Yuanxin Wang,
+                            Chao Gao, Yan Qiao, Guyue Zhou
+                        </p>
+                        <p class="venue">
+                            2025 IEEE International Conference on Robotics and
+                            Automation (ICRA), Atlanta, GA, USA. IEEE, 2025, pp.
+                            16202–16208.
+                        </p>
+                        <div class="meta-links">
+                            <a
+                                href="https://doi.org/10.1109/ICRA55743.2025.11127476"
+                                target="_blank"
+                                rel="noopener"
+                                >DOI</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub">
+                    <div class="idx">2</div>
+                    <div class="body">
+                        <p class="title">
+                            The General Solutions of Linear ODE and Riccati
+                            Equation
+                        </p>
+                        <p class="authors"><span class="me">Yimin Yan</span></p>
+                        <p class="venue">
+                            arXiv preprint arXiv:1006.4804, 2011.
+                        </p>
+                        <div class="meta-links">
+                            <a
+                                href="https://arxiv.org/abs/1006.4804"
+                                target="_blank"
+                                rel="noopener"
+                                >arXiv</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <ul class="info">
+                    <li>
+                        <span class="k">Email</span
+                        ><span
+                            ><a href="yanyimin24@mails.ucas.ac.cn"
+                                >yanyimin24@mails.ucas.ac.cn</a
+                            ></span
+                        >
+                    </li>
+                    <li>
+                        <span class="k">Affiliation</span
+                        ><span>UCAS &amp; CASIA, Beijing, China</span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <div class="wrap">
+                © <span id="year"></span> Yimin Yan · Built with plain HTML
+                &amp; hosted on GitHub Pages
+            </div>
+        </footer>
+
+        <script>
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+        </script>
+    </body>
+</html>
